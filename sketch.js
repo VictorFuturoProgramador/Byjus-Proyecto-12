@@ -3,43 +3,43 @@ var pathImg,boyImg;
 var i;
 
 function preload(){
-  //loadImage of the path
-  //loadAnimation of the boy
+  //loadImage de path (camino)
+  //loadAnimation de boy (niño)
  
 }
 
 function setup(){
   
   createCanvas(400,400);
- //create sprite for the path 
-//add image for the path
-//Make the track a moving background by giving velocity Y.
+ //crear sprite de path (camino) 
+//agregar imagen de path
+//Hacer que la pista sea un fondo en movimiento al darle velocidad Y.
 path.scale=1.2;
 
-//create a boy sprite
-//add animation for the boy
+//crear sprite de boy (niño)
+//agregar animación para boy
 boy.scale=0.08;
   
-// create left Boundary
+// crear  left Boundary (límite izquierdo)
 leftBoundary=createSprite(0,0,100,800);
-//set visibility as false for left boundary
+////establecer visibilidad como false (falso) para límite izquierdo
 
-//create right Boundary
+//crear right Boundary (límite derecho)
 rightBoundary=createSprite(410,0,100,800);
-//set visibility as false for left boundary
+//establecer visibilidad como false (falso) para límite izquierdo
 }
 
 function draw() {
   background(0);
   path.velocityY = 4;
   
-  // boy moving on Xaxis with mouse
+  // boy moviéndose en el eje X con el mouse
   
   edges= createEdgeSprites();
   boy.collide(edges[3]);
-  // collide the boy with the left and right invisible boundaries.
+  // colisión de boy con los límites derecho e izquierdo invisibles 
   
-  //code to reset the background
+  //código para reiniciar el fondo
   if(path.y > 400 ){
     path.y = height/2;
   }
